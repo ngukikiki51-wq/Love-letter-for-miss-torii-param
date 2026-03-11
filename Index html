@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Miss Torii 💖</title>
+
+<style>
+body{
+  margin:0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(120deg,#ff9a9e,#fad0c4);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  color:white;
+  text-align:center;
+}
+
+.container{
+  max-width:700px;
+  animation: fadeIn 4s;
+}
+
+h1{
+  font-size:40px;
+}
+
+p{
+  font-size:20px;
+  line-height:1.6;
+}
+
+.heart{
+  position:absolute;
+  color:red;
+  font-size:25px;
+  animation: float 6s infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(100vh);opacity:0;}
+  50%{opacity:1;}
+  100%{transform:translateY(-10vh);opacity:0;}
+}
+
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+button{
+  padding:12px 25px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  background:white;
+  color:#ff4b6e;
+  cursor:pointer;
+  margin-top:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>💖 Hello Miss Torii 💖</h1>
+
+<p>
+The day I met you I never imagined that someone special like you would love me.  
+I am so grateful and happy in my life because of you.  
+
+You make my days special and make me feel happy and comfortable.  
+You are my safe place and I never want to let you go.
+</p>
+
+<p>
+I am also sorry for all my mistakes and bad behaviour.  
+I promise I will try my best to make you happy and give you the life you deserve.
+</p>
+
+<p>
+I never felt love before in my life, but when I met you  
+I felt love for the first time. That is all I ever wanted.
+</p>
+
+<h2>THANK YOU for showing me true love 💖</h2>
+
+<h1>I LOVE YOU ❤️ SOOOOO MUCH</h1>
+
+<button onclick="playMusic()">Play Music 🎵</button>
+
+</div>
+
+<audio id="music" loop>
+<source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function playMusic(){
+  document.getElementById("music").play();
+}
+
+function createHeart(){
+  const heart=document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(Math.random()*3+3)+"s";
+  document.body.appendChild(heart);
+
+  setTimeout(()=>heart.remove(),6000);
+}
+
+setInterval(createHeart,400);
+
+</script>
+
+</body>
+</html>
